@@ -4,5 +4,5 @@ traveler2 = ['Erin Wilkes', 'Shanghai, China', ['historical site', 'art']]
 def get_des_index(destination):
     index = destinations.index(destination)
     return index
-print(get_des_index(traveler1[1]))
+
 
