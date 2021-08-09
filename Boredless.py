@@ -22,5 +22,12 @@ add_attraction("Cairo, Egypt", ["Egyptian Museum", ["museum"]])
 add_attraction("Tây Ninh, Việt Nam", ["Eden Cafe",["drinks", "relax"]])
 add_attraction("Tây Ninh, Việt Nam", ["Bầu Sen restaurant",["food", "beautiful view"]])
 add_attraction("Tây Ninh, Việt Nam", ["Ma Thiên Lãnh", ["beautiful view"]])
-#hoc lam viec nghi ngoi ngu da dang se
-print(attractions)
+def find_attraction(desti, interests):    
+    possible_attraction = []
+    attractions_in_city = attractions[get_des_index(desti)]
+    for attraction in attractions_in_city:
+        for interest in attraction[1]:
+            if interest in interests:
+                possible_attraction.append(attraction[0])
+    return possible_attraction
+
