@@ -20,7 +20,7 @@ add_attraction("São Paulo, Brazil", ["Pátio do Colégio", ["historical site"]]
 add_attraction("Cairo, Egypt", ["Pyramids of Giza", ["monument", "historical site"]])
 add_attraction("Cairo, Egypt", ["Egyptian Museum", ["museum"]])
 add_attraction("Tây Ninh, Việt Nam", ["Eden Cafe",["drinks", "relax"]])
-add_attraction("Tây Ninh, Việt Nam", ["Bầu Sen restaurant",["food", "beautiful view"]])
+add_attraction("Tây Ninh, Việt Nam", ["Bầu Sen restaurant",["food"]])
 add_attraction("Tây Ninh, Việt Nam", ["Ma Thiên Lãnh", ["beautiful view"]])
 def find_attraction(desti, interests):    
     possible_attraction = []
@@ -30,4 +30,12 @@ def find_attraction(desti, interests):
             if interest in interests:
                 possible_attraction.append(attraction[0])
     return possible_attraction
-
+def get_attract_for_traveler(traveler):
+    attract = find_attraction(traveler[1], traveler[2])
+    string = "Hi "+ traveler[0] +", we think you'll like these places around "+ traveler[1]+": "
+    for i in range(len(attract)):
+        string += attract[i]
+        if i != len(attract) - 1:
+            string += ", "
+    return string
+print(get_attract_for_traveler(traveler1))
